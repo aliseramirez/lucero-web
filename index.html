@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lucero — Portfolio Intelligence for Angel Investors</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -21,7 +21,7 @@
   }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Outfit', sans-serif;
     background: var(--cream);
     color: var(--text);
     min-height: 100vh;
@@ -47,8 +47,11 @@
   .nav-logo svg { width: 28px; height: 28px; }
 
   .nav-wordmark {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: var(--plum);
   }
 
@@ -57,9 +60,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    padding: 5rem 2rem;
+    padding: 5rem 2rem 0;
     gap: 0;
   }
 
@@ -72,9 +74,9 @@
     border: 1px solid rgba(61,26,64,0.12);
     padding: 0.3rem 0.85rem;
     border-radius: 100px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 500;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 2rem;
     opacity: 0;
@@ -89,26 +91,27 @@
   }
 
   h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.4rem, 6vw, 4rem);
-    font-weight: 400;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    font-weight: 300;
     color: var(--plum);
-    line-height: 1.15;
+    line-height: 1.2;
     max-width: 680px;
     margin-bottom: 1.5rem;
     opacity: 0;
     animation: fadeUp 0.5s ease 0.1s forwards;
+    letter-spacing: -0.01em;
   }
 
-  h1 em {
-    font-style: italic;
-    color: var(--plum-mid);
+  h1 strong {
+    font-weight: 600;
+    color: var(--plum);
   }
 
   .sub {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--muted);
-    max-width: 440px;
+    max-width: 420px;
     line-height: 1.75;
     font-weight: 300;
     margin-bottom: 2.5rem;
@@ -130,7 +133,7 @@
     padding: 0.8rem 1.2rem;
     border: 1.5px solid rgba(61,26,64,0.18);
     border-radius: 100px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 0.9rem;
     background: white;
     color: var(--text);
@@ -146,7 +149,7 @@
     border: none;
     padding: 0.8rem 1.5rem;
     border-radius: 100px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 0.88rem;
     font-weight: 500;
     cursor: pointer;
@@ -156,34 +159,95 @@
   .form button:hover { background: var(--plum-mid); transform: translateY(-1px); }
 
   .note {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: var(--light);
     margin-top: 0.85rem;
     opacity: 0;
     animation: fadeUp 0.5s ease 0.4s forwards;
   }
 
-  .pain {
-    display: flex;
-    gap: 2.5rem;
-    margin-top: 5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 820px;
+  /* DEMO SECTION */
+  .demo {
+    width: 100%;
+    max-width: 860px;
+    margin: 4rem auto 0;
     opacity: 0;
     animation: fadeUp 0.5s ease 0.5s forwards;
   }
 
-  .pain-item {
-    text-align: left;
-    max-width: 220px;
+  .demo-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-bottom: 1rem;
   }
+
+  .demo-window {
+    background: var(--plum);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(61,26,64,0.15);
+  }
+
+  .demo-bar {
+    background: rgba(0,0,0,0.2);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .demo-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(232,213,163,0.2);
+  }
+
+  .demo-placeholder {
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 320px;
+  }
+
+  .demo-placeholder svg {
+    width: 40px; height: 40px;
+    opacity: 0.3;
+  }
+
+  .demo-placeholder p {
+    font-size: 0.85rem;
+    color: rgba(232,213,163,0.35);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  /* PAIN */
+  .pain {
+    display: flex;
+    gap: 2.5rem;
+    margin: 4rem auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 820px;
+    padding: 0 2rem 3rem;
+    opacity: 0;
+    animation: fadeUp 0.5s ease 0.6s forwards;
+  }
+
+  .pain-item { text-align: left; max-width: 220px; }
 
   .pain-item h3 {
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--plum);
     margin-bottom: 0.4rem;
+    letter-spacing: 0.01em;
   }
 
   .pain-item p {
@@ -202,8 +266,10 @@
   }
 
   .footer-copy {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: var(--light);
+    font-weight: 300;
+    letter-spacing: 0.02em;
   }
 
   @keyframes fadeUp {
@@ -244,7 +310,7 @@
 <main>
   <div class="badge">Early access open</div>
 
-  <h1>Your portfolio is in the dark.<br><em>Lucero changes that.</em></h1>
+  <h1>Your portfolio is in the dark.<br><strong>Lucero changes that.</strong></h1>
 
   <p class="sub">One view across all your angel investments — with the signals, health scoring, and clarity you don't get from founders.</p>
 
@@ -255,6 +321,25 @@
     <button type="submit">Get early access</button>
   </form>
   <p class="note">Free to join. No credit card required.</p>
+
+  <div class="demo">
+    <p class="demo-label">See it in action</p>
+    <div class="demo-window">
+      <div class="demo-bar">
+        <div class="demo-dot"></div>
+        <div class="demo-dot"></div>
+        <div class="demo-dot"></div>
+      </div>
+      <div class="demo-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E8D5A3" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <p>Demo coming soon</p>
+      </div>
+    </div>
+  </div>
 
   <div class="pain">
     <div class="pain-item">
