@@ -248,10 +248,12 @@
 
   <p class="sub">One view across all your angel investments — with the signals, health scoring, and clarity you don't get from founders.</p>
 
-  <div class="form">
-    <input type="email" placeholder="your@email.com" />
-    <button>Get early access</button>
-  </div>
+  <form class="form" name="early-access" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="early-access" />
+    <input type="hidden" name="bot-field" />
+    <input type="email" name="email" placeholder="your@email.com" required />
+    <button type="submit">Get early access</button>
+  </form>
   <p class="note">Free to join. No credit card required.</p>
 
   <div class="pain">
